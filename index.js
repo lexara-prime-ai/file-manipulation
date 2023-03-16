@@ -16,16 +16,16 @@ readline.question('Type here(Edit file content): ', edit => {
                     if (err) throw err;
                     log("Directory created successfully...\nWriting changes to file...");
                     // WRITE FILE
-                    fs.writeFile(filePath, `${edit}`, (err) => {
-                        if (err) throw err;
+                    fs.appendFile(filePath, `${edit}`, (err) => {
+                        if (err) console.error(`${err.name}\t${err.message}`);
                         log("Changes have been saved...\nDone!");
                     });
                 });
             } else {
                 if (fs.existsSync(dirPath)) {
                     log("Working directory found!\nWriting changes to file...");
-                    fs.writeFile(filePath, `${edit}`, (err) => {
-                        if (err) throw err;
+                    fs.appendFile(filePath, `${edit}` + '\n', (err) => {
+                        if (err) console.error(`${err.name}\t${err.message}`);
                         log("Changes have been saved...\nDone!");
                     });
                 }

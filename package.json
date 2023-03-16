@@ -1,10 +1,10 @@
 {
   "name": "node_readline",
   "version": "1.0.0",
-  "description": "practice env for node readline module",
+  "description": "file editing",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "author": "Irfan Ghat",
   "license": "ISC"
